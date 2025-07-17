@@ -1,0 +1,154 @@
+2025-07-17 11:13:51,715 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 11:13:51,716 - INFO - [Executabil] Mutat: setup_installer.exe
+2025-07-17 11:13:51,717 - INFO - [Executabil] Mutat: tools.msi
+2025-07-17 11:14:01,796 - ERROR - [OMDb] Eroare rețea (401) pentru Avatar
+2025-07-17 11:14:01,799 - INFO - [Film] Mutat: Avatar.mkv -> Media\Movies\Avatar
+2025-07-17 11:14:01,800 - INFO - [Document] Mutat: curs_programare.pdf
+2025-07-17 11:14:01,801 - INFO - [Document] Mutat: CV.docx
+2025-07-17 11:14:01,802 - INFO - [Muzică] Mutată: Drake - God's Plan.mp3 -> Media\Music\Drake
+2025-07-17 11:14:02,155 - ERROR - [OMDb] Eroare rețea (401) pentru Fight Club
+2025-07-17 11:14:02,158 - INFO - [Film] Mutat: Fight Club.mp4 -> Media\Movies\Fight Club
+2025-07-17 11:14:02,165 - INFO - [Serial] Mutat: Game.of.Thrones.S03E09.avi -> Media\Series\Game Of Thrones\Season_3\Episode_9
+2025-07-17 11:14:02,167 - INFO - [Executabil] Mutat: script_de_instalare.sh
+2025-07-17 11:14:02,169 - INFO - [Muzică] Mutată: Eminem - Lose Yourself.mp3 -> Media\Music\Eminem
+2025-07-17 11:14:02,171 - INFO - [Document] Mutat: note.txt
+2025-07-17 11:14:02,173 - INFO - [Document] Mutat: Raport_de_lucru.odt
+2025-07-17 11:14:02,175 - INFO - [Executabil] Mutat: script.sh
+2025-07-17 11:14:02,180 - INFO - [Serial] Mutat: StrangerThings.S02E05.mp4 -> Media\Series\Strangerthings\Season_2\Episode_5
+2025-07-17 11:14:02,182 - INFO - ==== Terminare script ====
+2025-07-17 11:50:28,208 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 11:50:28,209 - INFO - [Document] Mutat: Proiect_Final.pdf
+2025-07-17 11:50:28,210 - INFO - [Executabil] Mutat: setup.exe
+2025-07-17 11:50:36,728 - ERROR - [OMDb] Eroare rețea (401) pentru Avatar
+2025-07-17 11:50:36,732 - INFO - [Film] Mutat: Avatar 2009.avi -> Media\Movies\2009\Avatar
+2025-07-17 11:50:36,737 - INFO - [Serial] Mutat: Game.of.Thrones.S08E03.avi -> Media\Series\Game Of Thrones\Season_8\Episode_3
+2025-07-17 11:50:36,739 - INFO - [Document] Mutat: notite.txt
+2025-07-17 11:50:36,742 - INFO - [Muzică] Mutată: Queen - Bohemian Rhapsody.flac -> Media\Music\Queen
+2025-07-17 11:50:37,503 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 11:50:37,504 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Inception
+2025-07-17 11:50:37,505 - INFO - [Executabil] Mutat: install.msi
+2025-07-17 11:50:37,505 - INFO - ==== Terminare script ====
+2025-07-17 11:52:33,974 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 11:52:33,976 - INFO - [Muzică] Mutată: Eminem - Lose Yourself.mp3 -> Media\Music\Eminem
+2025-07-17 11:52:33,977 - INFO - [Muzică] Mutată: NecunoscutArtist.wav -> Media\Music\Necunoscut
+2025-07-17 11:52:33,978 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 11:52:33,978 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 11:52:33,978 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 11:58:22,272 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 11:58:22,274 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 11:58:22,274 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 11:58:22,274 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 11:58:32,075 - ERROR - [OMDb] Eroare rețea (401) pentru The Matrix
+2025-07-17 11:58:32,077 - INFO - [Film] Mutat: The.Matrix.1999.mkv -> Media\Movies\1999\The Matrix
+2025-07-17 11:58:32,080 - INFO - [Serial] Mutat: Breaking.Bad.S01E01.mkv -> Media\Series\Breaking Bad\Season_1\Episode_1
+2025-07-17 11:58:32,081 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 11:58:32,081 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 11:58:32,081 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 11:58:32,084 - INFO - [Serial] Mutat: The.Office.S02E05.mp4 -> Media\Series\The Office\Season_2\Episode_5
+2025-07-17 11:58:32,087 - INFO - ==== Terminare script ====
+2025-07-17 12:03:42,334 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:03:48,963 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:03:48,967 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Unknown\Inception
+2025-07-17 12:03:48,970 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:03:48,971 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:03:48,971 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:03:48,972 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:03:48,973 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:03:48,973 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:03:48,974 - INFO - ==== Terminare script ====
+2025-07-17 12:05:37,762 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:05:38,126 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:05:38,127 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:05:38,129 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Unknown\Inception
+2025-07-17 12:05:38,141 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:05:38,142 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:05:38,144 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:05:38,145 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:05:38,146 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:05:38,147 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:05:38,148 - INFO - ==== Terminare script ====
+2025-07-17 12:09:30,468 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:09:41,560 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:09:41,561 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:09:41,563 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Unknown\Inception
+2025-07-17 12:09:41,565 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:09:41,566 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:09:41,567 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:09:41,568 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:09:41,568 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:09:41,569 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:09:41,569 - INFO - ==== Terminare script ====
+2025-07-17 12:20:59,367 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:21:06,246 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:21:06,247 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:21:06,249 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Unknown\Inception
+2025-07-17 12:21:06,251 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:21:06,251 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:21:06,251 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:21:06,252 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:21:06,252 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:21:06,252 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:21:06,252 - INFO - ==== Terminare script ====
+2025-07-17 12:27:41,973 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:27:51,048 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:27:51,049 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:27:51,051 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Unknown\Inception
+2025-07-17 12:27:51,053 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:27:51,054 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:27:51,055 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:27:51,057 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:27:51,058 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:27:51,058 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:27:51,059 - INFO - ==== Terminare script ====
+2025-07-17 12:38:00,536 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:38:08,322 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:38:08,323 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:38:08,326 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Inception
+2025-07-17 12:38:08,327 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:38:08,328 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:38:08,329 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:38:08,330 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:38:08,331 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:38:08,331 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:38:08,332 - INFO - ==== Terminare script ====
+2025-07-17 12:41:59,466 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:41:59,826 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:41:59,826 - ERROR - [OMDb] Eroare rețea (401) pentru Inception
+2025-07-17 12:41:59,829 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\Inception
+2025-07-17 12:41:59,830 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:41:59,830 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:41:59,830 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:41:59,831 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:41:59,831 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:41:59,832 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:41:59,832 - INFO - ==== Terminare script ====
+2025-07-17 12:42:03,352 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:42:03,353 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:42:03,353 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:42:03,353 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:42:03,354 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:42:03,354 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:42:03,354 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:42:03,355 - INFO - ==== Terminare script ====
+2025-07-17 12:52:40,759 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 12:52:50,634 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 12:52:50,634 - INFO - [OMDb] Metadate găsite pentru Inception
+2025-07-17 12:52:50,638 - INFO - [Film] Mutat: Inception.mp4 -> Media\Movies\2010\Inception
+2025-07-17 12:52:50,642 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 12:52:50,643 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 12:52:50,643 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 12:52:50,644 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 12:52:50,645 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 12:52:50,645 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 12:52:50,646 - INFO - ==== Terminare script ====
+2025-07-17 20:28:41,318 - INFO - ==== Pornire script gestiune_downloaduri.py ====
+2025-07-17 20:28:42,150 - DEBUG - [OMDb] Caut titlu: Inception
+2025-07-17 20:28:42,150 - INFO - [OMDb] Metadate găsite pentru Inception
+2025-07-17 20:28:42,154 - WARNING - [Film] Fișier duplicat: Inception.mp4. Se șterge.
+2025-07-17 20:28:42,156 - INFO - [Info] notite.txt deja este în document.
+2025-07-17 20:28:42,157 - INFO - [Info] Proiect_Final.pdf deja este în document.
+2025-07-17 20:28:42,158 - INFO - [Info] script.sh deja este în executabil.
+2025-07-17 20:28:42,159 - INFO - [Info] CV_2024.docx deja este în document.
+2025-07-17 20:28:42,168 - INFO - [Info] install.msi deja este în executabil.
+2025-07-17 20:28:42,168 - INFO - [Info] setup.exe deja este în executabil.
+2025-07-17 20:28:42,171 - INFO - ==== Terminare script ====
