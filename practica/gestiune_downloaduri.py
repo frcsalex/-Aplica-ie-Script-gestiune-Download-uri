@@ -1,3 +1,4 @@
+//am pus versiunea care avea erori,am facut cateva schimbari pana sa prezint si acum am facut acele schimbari si aici.
 import os
 import shutil
 import re
@@ -8,7 +9,6 @@ import mimetypes
 import hashlib
 from pathlib import Path
 
-# Directoare si loguri
 Path("logs").mkdir(exist_ok=True)
 logger = logging.getLogger("GestiuneDownloads")
 logger.setLevel(logging.DEBUG)
@@ -24,7 +24,6 @@ logger.handlers = []
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-# Setari directoare
 BASE = Path(".")
 DOWNLOADS = BASE / "Downloads"
 MEDIA = BASE / "Media"
@@ -33,7 +32,6 @@ EXECUTABLES = BASE / "Executables"
 for folder in [MEDIA / "Movies", MEDIA / "Series", MEDIA / "Music", DOCUMENTS, EXECUTABLES]:
     folder.mkdir(parents=True, exist_ok=True)
 
-# Extensii
 DOCUMENT_EXT = ['.pdf', '.odt', '.doc', '.docx', '.txt']
 EXECUTABLE_EXT = ['.exe', '.msi', '.sh']
 VIDEO_EXT = ['.mp4', '.mkv', '.avi']
@@ -41,22 +39,9 @@ AUDIO_EXT = ['.mp3', '.flac', '.wav']
 
 OMDB_API_KEY = "1bc331e"
 
-# Functii utilitare
-
-def calculeaza_hash(fisier_path, chunk_size=8192):
-    hash_md5 = hashlib.md5()
-    with open(fisier_path, "rb") as f:
-        for chunk in iter(lambda: f.read(chunk_size), b""):
-            hash_md5.update(chunk)
-    return hash_md5.hexdigest()
-
 def este_duplicat(sursa, destinatie_folder):
     destinatie_fisier = destinatie_folder / sursa.name
-    if destinatie_fisier.exists():
-        hash_src = calculeaza_hash(sursa)
-        hash_dest = calculeaza_hash(destinatie_fisier)
-        return hash_src == hash_dest
-    return False
+    return destinatie_fisier.exists()
 
 def cauta_metadate_omdb(titlu):
     try:
@@ -85,33 +70,41 @@ def curata_titlu_film(nume):
     return re.sub(r'(19\d{2}|20\d{2})', '', nume).strip()
 
 def tip_fisier(fisier_path):
+    import magic
     ext = fisier_path.suffix.lower()
     nume = fisier_path.stem
 
+    if ext in VIDEO_EXT:
+        return "film"
+    if ext in AUDIO_EXT:
+        return "muzica"
     if ext in DOCUMENT_EXT:
         return "document"
     if ext in EXECUTABLE_EXT:
         return "executabil"
-    if ext in VIDEO_EXT:
-        return "serial" if re.search(r'[Ss](\d{1,2})[Ee](\d{1,2})', nume) else "film"
-    if ext in AUDIO_EXT:
-        return "muzica"
 
-    # Daca nu are extensie sau este necunoscuta, incercam sa detectam MIME
-    mime, _ = mimetypes.guess_type(str(fisier_path))
-    if mime:
-        if mime.startswith("video"):
-            return "serial" if re.search(r'[Ss](\d{1,2})[Ee](\d{1,2})', nume) else "film"
-        elif mime.startswith("audio"):
+
+    try:
+        mime = magic.from_file(str(fisier_path), mime=True)
+        if mime and mime.startswith("video"):
+            titlu_curat = curata_titlu_film(nume)
+            metadate = cauta_metadate_omdb(titlu_curat)
+            if metadate and "Year" in metadate:
+                if re.search(r"\d{4}–\d{4}", metadate["Year"]):
+                    return "serial"
+                elif re.match(r"\d{4}$", metadate["Year"]):
+                    return "film"
+            return "film"
+        elif mime and mime.startswith("audio"):
             return "muzica"
-        elif mime in ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/plain"]:
+        elif "pdf" in mime or "text" in mime or "document" in mime:
             return "document"
-        elif mime in ["application/x-msdownload", "application/x-executable"]:
+        elif "executable" in mime or mime == "application/x-dosexec":
             return "executabil"
+    except Exception as e:
+        logger.warning(f"[magic] Eroare detectare tip MIME pentru {fisier_path.name}: {e}")
 
     return "necunoscut"
-
-# Functii de mutare
 
 def muta_film(film_path):
     nume = film_path.stem
@@ -129,12 +122,13 @@ def muta_film(film_path):
     destinatie = MEDIA / "Movies" / (an if an else "Fara_An") / titlu_curat
     destinatie.mkdir(parents=True, exist_ok=True)
 
-    if este_duplicat(film_path, destinatie):
-        logger.warning(f"[Film] Fișier duplicat: {film_path.name}. Se șterge.")
+    destinatie_fisier = destinatie / f"{nume}{extensie}"
+    if destinatie_fisier.exists():
+        logger.warning(f"[Film] Fișier duplicat: {film_path.name}. Se șterge sursa.")
         film_path.unlink()
         return
 
-    shutil.move(str(film_path), destinatie / f"{nume}{extensie}")
+    shutil.move(str(film_path), destinatie_fisier)
     logger.info(f"[Film] Mutat: {film_path.name} -> {destinatie}")
 
     if metadate:
@@ -153,12 +147,13 @@ def muta_serial(serial_path):
     destinatie = MEDIA / "Series" / titlu_curat / sezon / episod
     destinatie.mkdir(parents=True, exist_ok=True)
 
-    if este_duplicat(serial_path, destinatie):
-        logger.warning(f"[Serial] Fișier duplicat: {serial_path.name}. Se șterge.")
+    destinatie_fisier = destinatie / f"{nume}{extensie}"
+    if destinatie_fisier.exists():
+        logger.warning(f"[Serial] Fișier duplicat: {serial_path.name}. Se șterge sursa.")
         serial_path.unlink()
         return
 
-    shutil.move(str(serial_path), destinatie / f"{nume}{extensie}")
+    shutil.move(str(serial_path), destinatie_fisier)
     logger.info(f"[Serial] Mutat: {serial_path.name} -> {destinatie}")
 
 def muta_muzica(piesa_path):
@@ -168,30 +163,30 @@ def muta_muzica(piesa_path):
     destinatie = MEDIA / "Music" / artist
     destinatie.mkdir(parents=True, exist_ok=True)
 
-    if este_duplicat(piesa_path, destinatie):
-        logger.warning(f"[Muzică] Fișier duplicat: {piesa_path.name}. Se șterge.")
+    destinatie_fisier = destinatie / f"{melodie}{extensie}"
+    if destinatie_fisier.exists():
+        logger.warning(f"[Muzică] Fișier duplicat: {piesa_path.name}. Se șterge sursa.")
         piesa_path.unlink()
         return
 
-    shutil.move(str(piesa_path), destinatie / f"{melodie}{extensie}")
+    shutil.move(str(piesa_path), destinatie_fisier)
     logger.info(f"[Muzică] Mutata: {piesa_path.name} -> {destinatie}")
 
 def muta_altele(fisier):
     extensie = fisier.suffix.lower()
     destinatie = DOCUMENTS if extensie in DOCUMENT_EXT else EXECUTABLES if extensie in EXECUTABLE_EXT else DOCUMENTS
 
-    if este_duplicat(fisier, destinatie):
-        logger.warning(f"[Necunoscut] Fișier duplicat: {fisier.name}. Se șterge.")
+    destinatie_fisier = destinatie / fisier.name
+    if destinatie_fisier.exists():
+        logger.warning(f"[Necunoscut] Fișier duplicat: {fisier.name}. Se șterge sursa.")
         fisier.unlink()
         return
 
-    shutil.move(str(fisier), destinatie / fisier.name)
+    shutil.move(str(fisier), destinatie_fisier)
     logger.info(f"[Alt Tip] Mutat: {fisier.name} -> {destinatie}")
 
-# Functia principala
-
 def gestioneaza_toate_directoarele():
-    directoare_de_verificat = [DOWNLOADS, DOCUMENTS, EXECUTABLES]
+    directoare_de_verificat = [DOWNLOADS]  
     for director in directoare_de_verificat:
         for fisier in director.rglob('*'):
             if fisier.is_file():
@@ -204,11 +199,12 @@ def gestioneaza_toate_directoarele():
                     elif t == "muzica":
                         muta_muzica(fisier)
                     elif t in ["document", "executabil"]:
-                        logger.info(f"[Info] {fisier.name} deja este în {t}.")
+                        muta_altele(fisier)
                     else:
                         muta_altele(fisier)
                 except Exception as e:
                     logger.error(f"[Eroare] Nu s-a putut procesa {fisier.name}: {str(e)}")
+
 
 if __name__ == "__main__":
     logger.info("==== Pornire script gestiune_downloaduri.py ====")
